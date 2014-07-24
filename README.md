@@ -1,0 +1,1 @@
+Simple Android app built for practice with learning Android development.
