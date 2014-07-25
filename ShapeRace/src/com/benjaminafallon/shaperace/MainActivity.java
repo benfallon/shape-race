@@ -37,7 +37,6 @@ public class MainActivity extends Activity {
                 handler.post(new Runnable() {
                     public void run() {
         				showScore();
-                    	//Toast.makeText(getApplicationContext(), "Your score: " + score, Toast.LENGTH_LONG).show();
                     }
            });
 
@@ -47,7 +46,6 @@ public class MainActivity extends Activity {
 		
 		Timer myTimer = new Timer();
 		myTimer.schedule(task, 5000);
-		//myTimer.cancel();
 		
 		score = 0;
 		changeStar(1);
@@ -57,7 +55,6 @@ public class MainActivity extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
@@ -81,15 +78,9 @@ public class MainActivity extends Activity {
 	
 	public void changeStar(int i) {
 		View mView;
-		
-		//if (i == 1) {
-		//	new Timer().schedule(showScore(), 5000);
-		//}
-		
-		//firstStar = getRand1to3();
+
 		currStarButton = getRand1to3();
 
-		//switch(firstStar) {
 		switch(currStarButton) {
 			case 1:
 				mView = (View) findViewById(R.id.starButton1);
@@ -132,32 +123,21 @@ public class MainActivity extends Activity {
 		}
 		
 		AlertDialog.Builder alertDialog2 = new AlertDialog.Builder(this);
-		
-		// Setting Dialog Title
-		//alertDialog2.setTitle("Play Again?");
 
-		// Setting Dialog Message
 		alertDialog2.setMessage("Your Score: " + score + "\n High Score: " + high_score);
-
-		// Setting Icon to Dialog
-		//alertDialog2.setIcon(R.drawable.star);
 		
-		// Setting Positive "Yes" Btn
 		alertDialog2.setPositiveButton("Play Again",
 		        new DialogInterface.OnClickListener() {
 		            public void onClick(DialogInterface dialog, int which) {
-		                // Write your code here to execute after dialog
 		                Toast.makeText(getApplicationContext(),
 		                        "You clicked Play Again", Toast.LENGTH_SHORT)
 		                        .show();
 		            }
 		        });
 		
-		// Setting Negative "NO" Btn
 		alertDialog2.setNegativeButton("Quit",
 		        new DialogInterface.OnClickListener() {
 		            public void onClick(DialogInterface dialog, int which) {
-		                // Write your code here to execute after dialog
 		                Toast.makeText(getApplicationContext(),
 		                        "You clicked Quit", Toast.LENGTH_SHORT)
 		                        .show();
@@ -165,7 +145,6 @@ public class MainActivity extends Activity {
 		            }
 		        });
 
-		// Showing Alert Dialog
 		alertDialog2.show();
 	}
 
