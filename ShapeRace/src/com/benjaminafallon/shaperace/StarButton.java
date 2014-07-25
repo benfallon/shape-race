@@ -28,6 +28,4 @@ public class StarButton extends ImageButton {
 		this.has_star = has_star;
 	}
 	
-	
-
 }
